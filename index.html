@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>v-scroll</title>
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="stylesheet" href="/theme/v-scroll.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "$/": "/theme/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <main>
+      <v-scroll>
+        <div class="list">
+          <!-- 由 main.js 填充 -->
+        </div>
+      </v-scroll>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/v-scroll.js"></script>
+</body>
+</html>

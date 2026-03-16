@@ -1,0 +1,87 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 320px;
+  height: 80dvh;
+  min-height: 0;
+}
+
+/* 保证 v-scroll 可滚动，不依赖 theme 加载 */
+v-scroll {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+v-scroll::part(scroll) {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+
+v-scroll::part(scroll)::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+v-scroll::part(track) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 7px;
+}
+
+v-scroll::part(bar).turned {
+  opacity: 1;
+}
+
+v-scroll::part(bar) {
+  position: absolute;
+  right: 2px;
+  width: 10px;
+  min-height: 16px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+v-scroll::part(bar):hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+main .list {
+  padding: 0.5rem;
+}
+
+main .list p {
+  margin: 0.25rem 0;
+}
